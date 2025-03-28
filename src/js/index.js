@@ -2,6 +2,7 @@
 import 'lazysizes'
 import 'virtual:svg-icons-register'
 
+import { modalsInit } from '../pug/shared/modals/modals'
 import { remSelect } from '../pug/shared/_ui-rem/rem-select/rem-select'
 import '../styles/style.scss'
 import { validateFormInit } from './components/custom-validator'
@@ -21,6 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 export const commonFunction = () => {
   // libs config
+  modalsInit()
   config()
   cssDebug(true)
   initSlideFunction()

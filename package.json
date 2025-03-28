@@ -4,7 +4,7 @@
   "type": "module",
   "description": "",
   "scripts": {
-    "dev": "gulp pugMixins && vite --host",
+    "dev": "gulp pugMixins && vite --host --port 8934",
     "build": "gulp pugMixins && vite build && node .change-path.js",
     "build:backend": "gulp pugMixins && cross-env BACK_BUILD=true vite build && node .change-path.js",
     "preview": "vite preview",
