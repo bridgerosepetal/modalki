@@ -1,0 +1,14 @@
+mixin dealer-modal(mods)
+  -
+    const baseName = 'dealer-modal'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '_' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  .dealer-modal(class=allMods)&attributes(attributes)
+    block
