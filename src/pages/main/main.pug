@@ -8,5 +8,9 @@ block variables
 block content
   main(data-barba='container', data-barba-namespace=pageName)
     .inner
-      h1= pageName
-      +rem-input
+      button(data-modal-btn='wrapper') Open input modals
+      button(data-modal-btn='success-modal') Open success modal
+      #wrapper
+        +input-modals('wrapper')
+      #success-modal
+        +success-modal('success-modal')
