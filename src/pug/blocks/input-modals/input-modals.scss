@@ -341,6 +341,7 @@
   &__no-code {
     display: inline-flex;
     gap: rem(8px);
+    align-items: center;
 
     padding: rem(8px) rem(16px);
 
@@ -355,6 +356,13 @@
 
     border: 1px solid #e0e0e0;
     background: #fff;
+
+    @media #{media('<',d)} {
+      font-size: rem(10px);
+      font-weight: 500;
+      line-height: 140%; /* 14px */
+      letter-spacing: rem(-0.1px);
+    }
   }
 
   &__question {
@@ -370,7 +378,7 @@
     width: rem(18px);
     height: rem(18px);
 
-    color: var(--Red-Main, #db2e27);
+    color: #db2e27;
     font-family: 'Foundry Monoline OT3';
     font-size: rem(12px);
     font-style: normal;
