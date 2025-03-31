@@ -6,8 +6,8 @@
 
     &:checked + label {
       &::before {
-        background: $primary1;
-        border-color: $primary1;
+        background: $primary;
+        border-color: $primary;
       }
 
       &::after {
@@ -65,7 +65,7 @@
 
     a {
       display: inline;
-      color: $primary1;
+      color: $primary;
       text-decoration: underline;
     }
   }

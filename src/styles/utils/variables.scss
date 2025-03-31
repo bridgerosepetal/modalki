@@ -1,23 +1,21 @@
 @use 'sass:map';
 
 :root {
-  --primary1: teal;
-  --pink: #ffc0cb;
+  --primary: #1d3c85;
 
   // fonts
-  --font: 'Roboto', 'Arial', sans-serif;
-  --black: #0c0c0c;
+  --font: 'Foundry Monoline OT3', 'Arial', sans-serif;
+  --text: #242424;
   // colors
-  --background1: #f2f2f2;
+  --background: #f4f4f4;
 }
 
 // fonts
 $font: var(--font);
 // colors
-$background1: var(--background1);
-$black: var(--black);
-$primary1: var(--primary1);
-$pink: var(--pink);
+$background: var(--background);
+$text: var(--text);
+$primary: var(--primary1);
 $colors: (
   black: #000000
 );

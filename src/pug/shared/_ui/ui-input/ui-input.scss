@@ -1,53 +1,88 @@
 .ui-input {
   position: relative;
+  transition: $transition;
+
+  color: #242424;
+  font-family: 'Foundry Monoline OT3';
+  font-size: rem(16px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%; /* 22.4px */
+  letter-spacing: rem(-0.16px);
+  text-transform: uppercase;
+
+  &__icon {
+    position: absolute;
+    aspect-ratio: square;
+    right: rem(20px);
+
+    width: rem(20px);
+
+    right: rem(20px);
+    top: 50%;
+  }
 
   input {
-    width: 100%;
-    padding: 15px 20px;
+    padding: rem(20px);
 
-    background: #ffffff;
-    border: 1px solid $primary1;
-    border-radius: 6px;
-    outline: none;
+    vertical-align: bottom;
 
-    &.filled ~ label,
-    &:focus ~ label {
-      bottom: 100%;
-
-      > div {
-        font-size: 10px;
+    &:focus,
+    &:not(:placeholder-shown) {
+      padding-left: rem(20px);
+      padding-top: rem(29px);
+      padding-bottom: rem(11px);
+      padding-right: rem(50px);
+      & ~ label {
+        opacity: 0.5;
+        visibility: visible;
       }
     }
   }
 
-  label {
-    pointer-events: none;
-
-    position: absolute;
-    bottom: 50%;
-    left: 15px;
-    transform: translateY(50%);
-
-    display: block;
-
-    padding: 3px 5px;
-
-    color: #b2b2b2;
-
-    background-color: #ffffff;
-    border-radius: 5px;
-
-    transition: 0.3s;
-
-    > div {
-      transition: inherit;
-    }
+  input:focus ~ label,
+  input.filled ~ label {
+    opacity: 0.5;
+    visibility: visible;
   }
 
-  .just-validate-error-label {
+  input:focus::placeholder,
+  input.filled::placeholder {
+    visibility: hidden;
+  }
+
+  label {
+    color: #364a46;
+    font-family: Rubik;
+    font-size: rem(14px);
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+
+    transition: $transition;
+
+    opacity: 0;
+    visibility: hidden;
+
+    top: rem(28px);
+    left: rem(20px);
     position: absolute;
-    top: 100%;
-    left: 0;
-    font: 12px/1.2 $font;
+    transform-origin: left center;
+    transform: translateY(-1em);
+    transform: translateY(0) scale(1);
+  }
+
+  &__error {
+    margin-block: rem(6px);
+    color: #e40e20;
+    font-family: Rubik;
+    font-size: rem(14px);
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+
+    &:empty {
+      margin-block: 0;
+    }
   }
 }

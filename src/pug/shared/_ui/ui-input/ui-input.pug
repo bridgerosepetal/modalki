@@ -12,7 +12,14 @@ mixin ui-input(data, mods)
 
   .ui-input(class=allMods, class=data ? '' : 'ui-input_no-label')
     input(id=data.id, type=typeof type !== 'undefined' && type ? type : 'text')&attributes(attributes)
-    if data.p6
-      label(for=id)
-        +ui-p6(data.p6, data.p6mods)
-    block
+    case attributes.type
+      when 'tel'
+        .ui-input__icon
+          +input-cross
+      when 'password'
+        .ui-input__icon
+          +eye
+    if data.label
+      label(for=id)= data.label
+    .ui-input__error(data-error-container='')
+      block

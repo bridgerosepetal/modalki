@@ -8,7 +8,7 @@
     user-select: none;
 
     &:first-child {
-      color: $primary1;
+      color: $primary;
     }
   }
 
@@ -18,7 +18,7 @@
     width: 46px;
     padding: 2px;
 
-    border: 1px solid $primary1;
+    border: 1px solid $primary;
     border-radius: 20px;
 
     &::before {
@@ -29,7 +29,7 @@
       width: 20px;
       height: 20px;
 
-      background-color: $primary1;
+      background-color: $primary;
       border-radius: 50%;
 
       transition: 0.3s;
@@ -43,7 +43,7 @@
       }
 
       &:last-child {
-        color: $primary1;
+        color: $primary;
       }
     }
 

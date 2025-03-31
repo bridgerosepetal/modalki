@@ -23,7 +23,7 @@
     padding: 16px 50px 13px 20px;
 
     background: #ffffff;
-    border: 1px solid $primary1;
+    border: 1px solid $primary;
     border-radius: 6px;
     outline: none;
 
@@ -66,7 +66,7 @@
 .flatpickr-calendar {
   width: 220px;
 
-  color: $primary1;
+  color: $primary;
 
   border: 0;
   border-radius: 16px;
@@ -109,7 +109,7 @@
 
   .flatpickr-weekdays {
     height: 36px;
-    background: $primary1;
+    background: $primary;
 
     .flatpickr-weekday {
       font: 400 14px/1.5 $font;
@@ -146,19 +146,19 @@
         }
 
         &.inRange {
-          background: $primary1;
+          background: $primary;
           border-radius: 0;
         }
 
         &.today {
-          color: $primary1;
+          color: $primary;
           text-decoration: underline;
           border-color: transparent;
         }
 
         &.selected {
           color: #ffffff;
-          background: $primary1;
+          background: $primary;
         }
 
         &.startRange {
@@ -166,7 +166,7 @@
         }
 
         &.endRange {
-          background: $primary1;
+          background: $primary;
           border-radius: 0 6px 6px 0;
         }
       }

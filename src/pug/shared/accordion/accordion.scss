@@ -8,22 +8,22 @@
 
   @media #{media('>',t)} and (hover: hover) and (pointer: fine) {
     &:hover {
-      border-block: rem(1px) solid $pink;
+      border-block: rem(1px) solid #fed;
       transition: $transition;
       #{$comp}__button {
-        color: $pink;
+        color: #fed;
       }
     }
   }
 
   &.active {
-    border-block: rem(1px) solid $pink;
+    border-block: rem(1px) solid #fed;
 
     .accordion__panel {
       visibility: visible;
     }
     #{$comp}__button {
-      color: $pink;
+      color: #fed;
     }
   }
 
@@ -48,7 +48,7 @@
 
         svg {
           path {
-            stroke: $pink;
+            stroke: #fed;
           }
         }
       }
@@ -74,7 +74,7 @@
     font: $font;
     font-size: rem(32px);
     font-weight: 800;
-    color: $black;
+    color: #000;
     text-align: left;
 
     border: 0;
@@ -82,7 +82,7 @@
     transition: $transition;
 
     &:focus {
-      color: $black;
+      color: #000;
     }
   }
 

@@ -9,7 +9,7 @@
     height: 34px;
 
     font: 14px/34px $font;
-    color: $black;
+    color: #000;
     text-align: center;
 
     background: #ffffff;
@@ -18,12 +18,12 @@
     transition: 0.3s;
 
     @include media-hover {
-      color: $primary1;
+      color: $primary;
     }
 
     &_prev,
     &_next {
-      background: $primary1;
+      background: $primary;
 
       svg {
         position: absolute;
@@ -79,7 +79,7 @@
     &_active {
       .pagination__link {
         cursor: default;
-        color: $primary1;
+        color: $primary;
       }
     }
   }

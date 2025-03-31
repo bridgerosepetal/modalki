@@ -12,8 +12,29 @@ mixin input-modals(wrapper, mods)
 
   .input-modals(class=allMods)&attributes(attributes)
     +modal(wrapper)
-      p text suer
+      .input-modals__page
+        h4 Кабинет дилера
+        .input-modals__top-panel
+          button.input-modals__button
+            +back 
+          button.input-modals__button(data-modal-close=wrapper)
+            +cross
+        p Для получения данных входа обратитесь к своему персональному менеджеру.
+        form
+          +ui-input({id: 'tel', label:'Телефон'})(placeholder='Телефон *')(
+            type='tel',
+            required=''
+          )(
+            data-mask-phone=''
+          )
+          +ui-input({id: 'password', label:'Пароль'})(placeholder='Пароль *')(
+            type='password',
+            required=''
+          )
+          #error Неверный телефон или пароль
+          button.input-modals__main-button Войти
+        a.input-modals__inline-link(href='#') Забыли пароль?
+        a.input-modals__link(href='#') Заявка на дилерство
       hr
       hr
       hr
-      p text

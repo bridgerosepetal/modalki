@@ -11,9 +11,6 @@ block description
 block content
   main.ui-page(data-barba='container', data-barba-namespace=pageName)
     .inner
-      button(data-modal-btn='wrapper') Open success modal
+      button(data-modal-btn='wrapper') Open input modals
       #wrapper
-        +modal('wrapper')
-          h1 some text
-          h2 more text
-          p Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus alias molestiae dolorem quos dignissimos veniam laborum tenetur, velit repellendus ullam, aliquid ipsam unde tempore voluptatibus sed nostrum. Quam, asperiores perspiciatis?
+        +input-modals('wrapper')
