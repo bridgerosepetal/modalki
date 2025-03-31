@@ -3,28 +3,8 @@
   font-weight: 400;
   transition: $transition;
 
-  &__inline-link {
-    display: block;
-    color: #1d3c85;
-    text-align: center;
-    font-family: 'Foundry Monoline OT3';
-    font-size: rem(16px);
-    font-style: normal;
-    font-weight: 500;
-    line-height: 140%; /* 22.4px */
-    letter-spacing: rem(-0.16px);
-    text-decoration-line: underline;
-    text-decoration-style: solid;
-    text-decoration-skip-ink: none;
-    text-decoration-thickness: auto;
-    text-underline-offset: auto;
-    text-underline-position: from-font;
-    margin-top: rem(20px);
-
-    @media #{media('<',d)} {
-      padding-block: rem(7.5px);
-      margin-top: rem(8px);
-    }
+  hr {
+    margin-block: rem(20px);
   }
 
   input {
@@ -34,13 +14,9 @@
 
     width: 100%;
 
-    margin-top: rem(20px);
-
     transition: $transition;
 
     @media #{media('>',t)} and (hover: hover) and (pointer: fine) {
-      margin-top: rem(12px);
-
       &:hover {
         box-shadow: 0px 0px rem(10px) 0px rgba(0, 0, 0, 0.2) inset;
       }
@@ -50,22 +26,29 @@
       text-transform: uppercase;
     }
 
+    & ~ label {
+      color: #7f7f7f;
+      font-family: 'Foundry Monoline OT3';
+      font-size: rem(13px);
+      font-style: normal;
+      font-weight: 500;
+      line-height: 140%; /* 18.2px */
+      letter-spacing: rem(-0.13px);
+      text-transform: uppercase;
+
+      @media #{media('<',d)} {
+        font-size: rem(8px);
+        letter-spacing: rem(-0.08px);
+      }
+    }
+
     &[required] {
       & ~ label {
-        color: var(--Dark-Second, #7f7f7f);
-        font-family: 'Foundry Monoline OT3';
-        font-size: rem(13px);
-        font-style: normal;
-        font-weight: 500;
-        line-height: 140%; /* 18.2px */
-        letter-spacing: rem(-0.13px);
-        text-transform: uppercase;
-
         &::after {
           content: ' *';
           display: absolute;
 
-          color: var(--Dark-Main, #242424);
+          color: #242424;
           font-family: 'Foundry Monoline OT3';
           font-size: rem(13px);
           font-style: normal;
@@ -75,6 +58,11 @@
           text-transform: uppercase;
 
           right: 0;
+
+          @media #{media('<',d)} {
+            font-size: rem(8px);
+            letter-spacing: rem(-0.08px);
+          }
         }
       }
     }
@@ -104,9 +92,8 @@
     }
   }
 
-  p {
+  &__explain {
     margin-top: rem(12px);
-    margin-bottom: rem(40px);
 
     color: $text;
     text-align: center;
@@ -130,6 +117,46 @@
     }
   }
 
+  &__details {
+    color: #7f7f7f;
+    font-family: 'Foundry Monoline OT3';
+    font-size: rem(14px);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%; /* 19.6px */
+    letter-spacing: rem(-0.14px);
+
+    margin-top: rem(20px);
+
+    @media #{media('<',d)} {
+      font-size: rem(10px);
+      letter-spacing: rem(-0.1px);
+
+      margin-top: rem(12px);
+    }
+  }
+
+  form {
+    .ui-input:first-of-type {
+      margin-top: rem(40px);
+
+      @media #{media('<',d)} {
+        margin-top: rem(20px);
+      }
+    }
+    .ui-input {
+      margin-top: rem(20px);
+
+      @media #{media('<',d)} {
+        margin-top: rem(12px);
+      }
+    }
+  }
+
+  &_leading {
+    margin-top: rem(40px);
+  }
+
   #error {
     margin-top: rem(20px);
     color: #db2e27;
@@ -142,7 +169,66 @@
     letter-spacing: rem(-0.16px);
 
     @media #{media('<',d)} {
+      color: #db2e27;
+      font-size: rem(12px);
+      letter-spacing: rem(-0.12px);
+
       margin-top: rem(12px);
+    }
+  }
+
+  &__wrap-center {
+    display: flex;
+    justify-content: center;
+
+    margin-top: rem(20px);
+
+    @media #{media('<',d)} {
+      margin-top: rem(8px);
+    }
+  }
+
+  &__text-link {
+    color: #1d3c85;
+    display: inline;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-skip-ink: none;
+    text-decoration-thickness: auto;
+    text-underline-offset: auto;
+    text-underline-position: from-font;
+
+    @media #{media('>',t)} and (hover: hover) and (pointer: fine) {
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__inline-link {
+    color: #1d3c85;
+    text-align: center;
+    font-family: 'Foundry Monoline OT3';
+    font-size: rem(16px);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%; /* 22.4px */
+    letter-spacing: rem(-0.16px);
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-skip-ink: none;
+    text-decoration-thickness: auto;
+    text-underline-offset: auto;
+    text-underline-position: from-font;
+
+    @media #{media('<',d)} {
+      padding-block: rem(7.5px);
+    }
+
+    @media #{media('>',t)} and (hover: hover) and (pointer: fine) {
+      &:hover {
+        text-decoration: none;
+      }
     }
   }
 
@@ -156,6 +242,7 @@
     @media #{media('<',d)} {
       padding-inline: rem(12px);
       padding-block: rem(52px);
+      width: rem(320px);
     }
   }
 
@@ -200,6 +287,14 @@
     line-height: 140%;
     letter-spacing: rem(-0.16px);
 
+    transition: $transition;
+
+    @media #{media('>',t)} and (hover: hover) and (pointer: fine) {
+      &:hover {
+        background-color: #0d1d43;
+      }
+    }
+
     @media #{media('<',d)} {
       padding: rem(12px) rem(24px);
       margin-top: rem(12px);
@@ -229,9 +324,59 @@
     background: rgba(255, 255, 255, 0.01);
     backdrop-filter: blur(rem(6px));
 
+    transition: $transition;
+
+    @media #{media('>',t)} and (hover: hover) and (pointer: fine) {
+      &:hover {
+        border-color: #000;
+      }
+    }
+
     @media #{media('<',d)} {
       padding: rem(12px) rem(24px);
       margin-top: rem(8px);
     }
+  }
+
+  &__no-code {
+    display: inline-flex;
+    gap: rem(8px);
+
+    padding: rem(8px) rem(16px);
+
+    color: #242424;
+    font-family: 'Foundry Monoline OT3';
+    font-size: rem(14px);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%; /* 19.6px */
+    letter-spacing: rem(-0.14px);
+    text-transform: uppercase;
+
+    border: 1px solid #e0e0e0;
+    background: #fff;
+  }
+
+  &__question {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    aspect-ratio: 1 / 1;
+
+    border-radius: rem(40px);
+    border: 1px solid #e0e0e0;
+    background: #fff;
+    width: rem(18px);
+    height: rem(18px);
+
+    color: var(--Red-Main, #db2e27);
+    font-family: 'Foundry Monoline OT3';
+    font-size: rem(12px);
+    font-style: normal;
+    font-weight: 800;
+    line-height: 140%; /* 16.8px */
+    letter-spacing: rem(-0.12px);
+    text-transform: uppercase;
   }
 }

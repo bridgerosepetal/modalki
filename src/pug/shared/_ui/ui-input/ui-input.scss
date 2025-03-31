@@ -13,17 +13,31 @@
 
   &__icon {
     position: absolute;
-    aspect-ratio: square;
+    aspect-ratio: 1 / 1;
     right: rem(20px);
+    top: 50%;
+    transform: translateY(rem(-10px));
 
     width: rem(20px);
 
-    right: rem(20px);
-    top: 50%;
+    @media #{media('<',d)} {
+      transform: translateY(rem(-8px));
+      width: rem(16px);
+      right: rem(12px);
+    }
   }
 
   input {
     padding: rem(20px);
+
+    color: #7f7f7f;
+    font-family: 'Foundry Monoline OT3';
+    font-size: rem(16px);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%; /* 22.4px */
+    letter-spacing: rem(-0.16px);
+    text-transform: uppercase;
 
     vertical-align: bottom;
 
@@ -34,15 +48,37 @@
       padding-bottom: rem(11px);
       padding-right: rem(50px);
       & ~ label {
-        opacity: 0.5;
+        opacity: 1;
         visibility: visible;
+      }
+    }
+
+    @media #{media('<',d)} {
+      color: #6f6f6f;
+      font-size: rem(12px);
+      line-height: 140%; /* 16.8px */
+      letter-spacing: rem(-0.12px);
+
+      padding-block: rem(13.5px);
+      padding-inline: rem(12px);
+
+      &:focus,
+      &:not(:placeholder-shown) {
+        padding-left: rem(12px);
+        padding-top: rem(20px);
+        padding-bottom: rem(7px);
+        padding-right: rem(28px);
+        & ~ label {
+          opacity: 1;
+          visibility: visible;
+        }
       }
     }
   }
 
   input:focus ~ label,
   input.filled ~ label {
-    opacity: 0.5;
+    opacity: 1;
     visibility: visible;
   }
 
@@ -52,30 +88,36 @@
   }
 
   label {
-    color: #364a46;
-    font-family: Rubik;
+    font-family: $font;
     font-size: rem(14px);
     font-style: normal;
     font-weight: 300;
     line-height: normal;
+    color: #364a46;
 
     transition: $transition;
 
     opacity: 0;
     visibility: hidden;
 
-    top: rem(28px);
-    left: rem(20px);
     position: absolute;
-    transform-origin: left center;
+    transform-origin: top left;
     transform: translateY(-1em);
     transform: translateY(0) scale(1);
+    /* Position of the text of the input */
+    top: rem(11px);
+    left: rem(20px);
+
+    @media #{media('<',d)} {
+      left: rem(12px);
+      top: rem(7px);
+    }
   }
 
   &__error {
     margin-block: rem(6px);
     color: #e40e20;
-    font-family: Rubik;
+    font-family: $font;
     font-size: rem(14px);
     font-style: normal;
     font-weight: 300;
