@@ -1,0 +1,19 @@
+mixin input-modals(wrapper, mods)
+  -
+    const baseName = 'input-modals'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '_' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  .input-modals(class=allMods)&attributes(attributes)
+    +modal(wrapper)
+      p text suer
+      hr
+      hr
+      hr
+      p text
