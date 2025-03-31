@@ -1,0 +1,387 @@
+.success-modal {
+  font-family: 'Foundry Monoline OT3';
+  font-weight: 400;
+  transition: $transition;
+
+  hr {
+    margin-block: rem(20px);
+  }
+
+  input {
+    border: 1px solid #e0e0e0;
+    background: #fbfbfb;
+    box-shadow: 0px 0px rem(20px) 0px rgba(0, 0, 0, 0.08) inset;
+
+    width: 100%;
+
+    transition: $transition;
+
+    @media #{media('>',t)} and (hover: hover) and (pointer: fine) {
+      &:hover {
+        box-shadow: 0px 0px rem(10px) 0px rgba(0, 0, 0, 0.2) inset;
+      }
+    }
+
+    &::placeholder {
+      text-transform: uppercase;
+    }
+
+    & ~ label {
+      color: #7f7f7f;
+      font-family: 'Foundry Monoline OT3';
+      font-size: rem(13px);
+      font-style: normal;
+      font-weight: 500;
+      line-height: 140%; /* 18.2px */
+      letter-spacing: rem(-0.13px);
+      text-transform: uppercase;
+
+      @media #{media('<',d)} {
+        font-size: rem(8px);
+        letter-spacing: rem(-0.08px);
+      }
+    }
+
+    &[required] {
+      & ~ label {
+        &::after {
+          content: ' *';
+          display: absolute;
+
+          color: #242424;
+          font-family: 'Foundry Monoline OT3';
+          font-size: rem(13px);
+          font-style: normal;
+          font-weight: 500;
+          line-height: 140%;
+          letter-spacing: rem(-0.13px);
+          text-transform: uppercase;
+
+          right: 0;
+
+          @media #{media('<',d)} {
+            font-size: rem(8px);
+            letter-spacing: rem(-0.08px);
+          }
+        }
+      }
+    }
+  }
+
+  h4 {
+    color: $text;
+    text-align: center;
+    /* Heading 4 */
+    font-family: 'Foundry Monoline OT3';
+    font-size: rem(40px);
+    font-style: italic;
+    font-weight: 800;
+    line-height: 110%; /* 44px */
+    letter-spacing: rem(-1.6px);
+    text-transform: uppercase;
+
+    @media #{media('<',d)} {
+      text-align: center;
+      font-family: 'Foundry Monoline OT3';
+      font-size: rem(20px);
+      font-style: italic;
+      font-weight: 800;
+      line-height: 110%; /* 22px */
+      letter-spacing: rem(-0.6px);
+      text-transform: uppercase;
+    }
+  }
+
+  &__checkmark {
+    aspect-ratio: 1 / 1;
+    width: rem(100px);
+
+    @media #{media('<',d)} {
+      width: rem(64px);
+    }
+  }
+
+  &__explain {
+    margin-top: rem(12px);
+
+    color: $text;
+    text-align: center;
+    font-family: 'Foundry Monoline OT3';
+    font-size: rem(20px);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%; /* 28px */
+    letter-spacing: rem(-0.2px);
+
+    @media #{media('<',d)} {
+      margin-top: rem(8px);
+
+      font-family: 'Foundry Monoline OT3';
+      font-size: rem(14px);
+      font-style: normal;
+      font-weight: 500;
+      line-height: 140%; /* 19.6px */
+      letter-spacing: rem(-0.14px);
+    }
+  }
+
+  &__details {
+    color: #7f7f7f;
+    font-family: 'Foundry Monoline OT3';
+    font-size: rem(14px);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%; /* 19.6px */
+    letter-spacing: rem(-0.14px);
+
+    margin-top: rem(20px);
+
+    @media #{media('<',d)} {
+      font-size: rem(10px);
+      letter-spacing: rem(-0.1px);
+
+      margin-top: rem(12px);
+    }
+  }
+
+  form {
+    .ui-input:first-of-type {
+      margin-top: rem(40px);
+
+      @media #{media('<',d)} {
+        margin-top: rem(20px);
+      }
+    }
+    .ui-input {
+      margin-top: rem(20px);
+
+      @media #{media('<',d)} {
+        margin-top: rem(12px);
+      }
+    }
+  }
+
+  &_leading {
+    margin-top: rem(40px);
+  }
+
+  #error {
+    margin-top: rem(20px);
+    color: #db2e27;
+    text-align: center;
+    font-family: 'Foundry Monoline OT3';
+    font-size: rem(16px);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%; /* 22.4px */
+    letter-spacing: rem(-0.16px);
+
+    @media #{media('<',d)} {
+      color: #db2e27;
+      font-size: rem(12px);
+      letter-spacing: rem(-0.12px);
+
+      margin-top: rem(12px);
+    }
+  }
+
+  &__wrap-center {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__text-link {
+    color: #1d3c85;
+    display: inline;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-skip-ink: none;
+    text-decoration-thickness: auto;
+    text-underline-offset: auto;
+    text-underline-position: from-font;
+
+    @media #{media('>',t)} and (hover: hover) and (pointer: fine) {
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__inline-link {
+    color: #1d3c85;
+    text-align: center;
+    font-family: 'Foundry Monoline OT3';
+    font-size: rem(16px);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%; /* 22.4px */
+    letter-spacing: rem(-0.16px);
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-skip-ink: none;
+    text-decoration-thickness: auto;
+    text-underline-offset: auto;
+    text-underline-position: from-font;
+
+    @media #{media('<',d)} {
+      padding-block: rem(7.5px);
+    }
+
+    @media #{media('>',t)} and (hover: hover) and (pointer: fine) {
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__page {
+    max-width: rem(600px);
+    min-width: rem(320px);
+    padding: rem(80px);
+
+    background-color: #fff;
+
+    @media #{media('<',d)} {
+      padding-inline: rem(16px);
+      padding-block: rem(52px);
+      width: rem(320px);
+    }
+  }
+
+  &__top-panel {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+
+    position: absolute;
+    top: rem(20px);
+    left: rem(20px);
+    right: rem(20px);
+  }
+
+  &__button {
+    aspect-ratio: square;
+
+    padding: rem(8px);
+    width: rem(40px);
+
+    cursor: pointer;
+
+    border: #e0e0e0 1px solid;
+    background-color: #fff;
+
+    @media #{media('<',d)} {
+      width: rem(32px);
+    }
+  }
+
+  &__main-button {
+    padding: rem(20px) rem(40px);
+    width: 100%;
+
+    margin-top: rem(40px);
+
+    background-color: #1d3c85;
+
+    text-transform: uppercase;
+    color: #fff;
+    font-size: rem(16px);
+    font-weight: 800;
+    line-height: 140%;
+    letter-spacing: rem(-0.16px);
+
+    transition: $transition;
+
+    @media #{media('>',t)} and (hover: hover) and (pointer: fine) {
+      &:hover {
+        background-color: #0d1d43;
+      }
+    }
+
+    @media #{media('<',d)} {
+      padding: rem(12px) rem(24px);
+      margin-top: rem(20px);
+      display: inline-block;
+      width: unset;
+    }
+  }
+
+  &__link {
+    padding: rem(20px) rem(40px);
+    width: 100%;
+
+    margin-top: rem(20px);
+
+    background-color: #1d3c85;
+
+    font-family: 'Foundry Monoline OT3';
+    text-transform: uppercase;
+    color: #fff;
+    font-size: rem(16px);
+    font-weight: 800;
+    line-height: 140%;
+    letter-spacing: rem(-0.16px);
+
+    text-align: center;
+    color: $text;
+
+    border: 1px solid var(--gray-borders-lines, #e0e0e0);
+    background: rgba(255, 255, 255, 0.01);
+    backdrop-filter: blur(rem(6px));
+
+    transition: $transition;
+
+    @media #{media('>',t)} and (hover: hover) and (pointer: fine) {
+      &:hover {
+        border-color: #000;
+      }
+    }
+
+    @media #{media('<',d)} {
+      padding: rem(12px) rem(24px);
+      margin-top: rem(8px);
+    }
+  }
+
+  &__no-code {
+    display: inline-flex;
+    gap: rem(8px);
+
+    padding: rem(8px) rem(16px);
+
+    color: #242424;
+    font-family: 'Foundry Monoline OT3';
+    font-size: rem(14px);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%; /* 19.6px */
+    letter-spacing: rem(-0.14px);
+    text-transform: uppercase;
+
+    border: 1px solid #e0e0e0;
+    background: #fff;
+  }
+
+  &__question {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    aspect-ratio: 1 / 1;
+
+    border-radius: rem(40px);
+    border: 1px solid #e0e0e0;
+    background: #fff;
+    width: rem(18px);
+    height: rem(18px);
+
+    color: var(--Red-Main, #db2e27);
+    font-family: 'Foundry Monoline OT3';
+    font-size: rem(12px);
+    font-style: normal;
+    font-weight: 800;
+    line-height: 140%; /* 16.8px */
+    letter-spacing: rem(-0.12px);
+    text-transform: uppercase;
+  }
+}

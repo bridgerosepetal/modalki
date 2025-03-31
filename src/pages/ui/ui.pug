@@ -12,5 +12,8 @@ block content
   main.ui-page(data-barba='container', data-barba-namespace=pageName)
     .inner
       button(data-modal-btn='wrapper') Open input modals
+      button(data-modal-btn='success-modal') Open success modal
       #wrapper
         +input-modals('wrapper')
+      #success-modal
+        +success-modal('success-modal')

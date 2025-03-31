@@ -1,0 +1,25 @@
+mixin success-modal(wrapper, mods)
+  -
+    const baseName = 'success-modal'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '_' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  .success-modal(class=allMods)&attributes(attributes)
+    +modal(wrapper)
+      .success-modal__page
+        .success-modal__top-panel
+          button.success-modal__button(data-modal-close=wrapper)
+            +cross
+        .success-modal__wrap-center
+          .success-modal__checkmark
+            +picture('success.png')
+        h4(class='mt-10 d:mt-5') Ваш пароль успешно изменен
+        p.success-modal__explain Теперь вы можете использовать новый пароль для входа
+        .success-modal__wrap-center
+          button.success-modal__main-button Хорошо, спасибо
