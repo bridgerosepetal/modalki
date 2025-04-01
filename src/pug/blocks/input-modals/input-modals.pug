@@ -51,7 +51,9 @@ mixin input-modals(wrapper, mods)
             max='999999',
             required=''
           )
-          button.input-modals__main-button Войти
+          button.input-modals__main-button
+            .input-modals__loader
+              +loader
         p.input-modals__explain.input-modals__explain_under-button Отправим код повторно через 45 секунд
         .input-modals__wrap-center
           .input-modals__no-code(href='#')
