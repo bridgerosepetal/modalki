@@ -9,3 +9,18 @@ body {
     overflow: hidden;
   }
 }
+
+.ui-button {
+  display: inline-block;
+  background-color: #663399;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  transition: $transition;
+
+  &:hover {
+    border-color: #30022f;
+    text-decoration: underline;
+  }
+}

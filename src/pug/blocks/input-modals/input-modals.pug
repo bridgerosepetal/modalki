@@ -13,67 +13,71 @@ mixin input-modals(wrapper, mods)
   .input-modals(class=allMods)&attributes(attributes)
     +modal(wrapper)
       .input-modals__page
-        h4 Кабинет дилера
-        .input-modals__top-panel
-          button.input-modals__button
-            +back 
-          button.input-modals__button(data-modal-close=wrapper)
-            +cross
-        p.input-modals__explain Для получения данных входа обратитесь к своему персональному менеджеру.
-        form
-          +ui-input({id: 'tel', label:'Телефон'})(placeholder='Телефон *')(
-            type='tel',
-            required=''
-          )(
-            data-mask-phone=''
-          )
-          +ui-input({id: 'password', label:'Пароль'})(placeholder='Пароль *')(
-            type='password',
-            required=''
-          )
-          #error Неверный телефон или пароль
-          button.input-modals__main-button Войти
-        .input-modals__wrap-center
-          a.input-modals__inline-link.input-modals__forgot(href='#') Забыли пароль?
-        a.input-modals__link(href='#') Заявка на дилерство
+        section
+          h4 Кабинет дилера
+          .input-modals__top-panel
+            button.input-modals__button
+              +back 
+            button.input-modals__button(data-modal-close=wrapper)
+              +cross
+          p.input-modals__explain Для получения данных входа обратитесь к своему персональному менеджеру.
+          form
+            +ui-input({id: 'tel', label:'Телефон'})(placeholder='Телефон *')(
+              type='tel',
+              required=''
+            )(
+              data-mask-phone=''
+            )
+            +ui-input({id: 'password', label:'Пароль'})(placeholder='Пароль *')(
+              type='password',
+              required=''
+            )
+            #error Неверный телефон или пароль
+            button.input-modals__main-button Войти
+          .input-modals__wrap-center
+            a.input-modals__inline-link.input-modals__forgot(href='#') Забыли пароль?
+          a.input-modals__link(href='#') Заявка на дилерство
         hr
         hr
         hr
-        h4 Подтвердите номер телефона
-        p.input-modals__explain
-          | Сейчас вы получите код на номер
-          br
-          | + 7 981 ***-**-22
-        form
-          +ui-input({id: 'code', label: 'Код'})(placeholder='Код *')(
-            type='number',
-            min='0',
-            max='999999',
-            required=''
-          )
-          button.input-modals__main-button
-            .input-modals__loader
-              +loader
-        p.input-modals__explain.input-modals__explain_under-button Отправим код повторно через 45 секунд
-        .input-modals__wrap-center
-          .input-modals__no-code(href='#')
-            a.span(href='#') Не приходит код
-            .input-modals__question ?
+        section
+          h4 Подтвердите номер телефона
+          p.input-modals__explain
+            | Сейчас вы получите код на номер
+            br
+            | + 7 981 ***-**-22
+          form
+            +ui-input({id: 'code', label: 'Код'})(placeholder='Код *')(
+              type='number',
+              min='0',
+              max='999999',
+              required='',
+              value='892345'
+            )
+            button.input-modals__main-button
+              .input-modals__loader
+                +loader
+          p.input-modals__explain.input-modals__explain_under-button Отправим код повторно через 45 секунд
+          .input-modals__wrap-center
+            .input-modals__no-code(href='#')
+              a.span(href='#') Не приходит код
+              .input-modals__question ?
         hr
         hr
         hr
-        h4 Восстановление пароля
-        p.input-modals__explain Если вы забыли пароль, введите номер телефона
-        form
-          +ui-input({id: 'tel', label:'Телефон'})(placeholder='Телефон *')(
-            type='tel',
-            required=''
-          )(
-            data-mask-phone=''
-          )
-          #error Профиль пользователя не найден
-          button.input-modals__main-button Далее
-        p.input-modals__details
-          | Нажимая на кнопку «Отправить», я соглашаюсь на получение информации и уведомлений от интернет-сайта, а также принимаю#{ ' ' }
-          a.input-modals__text-link(href='') условия политики конфиденциальности
-          | .
+        section
+          h4 Восстановление пароля
+          p.input-modals__explain Если вы забыли пароль, введите номер телефона
+          form
+            +ui-input({id: 'tel', label:'Телефон'})(placeholder='Телефон *')(
+              type='tel',
+              required=''
+            )(
+              data-mask-phone=''
+            )
+            #error Профиль пользователя не найден
+            button.input-modals__main-button Далее
+          p.input-modals__details
+            | Нажимая на кнопку «Отправить», я соглашаюсь на получение информации и уведомлений от интернет-сайта, а также принимаю#{ ' ' }
+            a.input-modals__text-link(href='') условия политики конфиденциальности
+            | .
