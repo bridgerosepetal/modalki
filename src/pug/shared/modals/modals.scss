@@ -104,7 +104,7 @@
     overflow: hidden scroll;
     // @include scrollbar-hidden();
     max-height: calc(100vh - rem(100px));
-    max-width: calc(100vh - rem(100px));
+    max-width: calc(100vw - rem(100px));
     overflow: auto;
   }
 

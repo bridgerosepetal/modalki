@@ -12,14 +12,14 @@ mixin input-modals(wrapper, mods)
 
   .input-modals(class=allMods)&attributes(attributes)
     +modal(wrapper)
+      .input-modals__top-panel
+        button.input-modals__button
+          +back 
+        button.input-modals__button(data-modal-close=wrapper)
+          +cross
       .input-modals__page
         section
           h4 Кабинет дилера
-          .input-modals__top-panel
-            button.input-modals__button
-              +back 
-            button.input-modals__button(data-modal-close=wrapper)
-              +cross
           p.input-modals__explain Для получения данных входа обратитесь к своему персональному менеджеру.
           form
             +ui-input({id: 'tel', label:'Телефон'})(placeholder='Телефон *')(
