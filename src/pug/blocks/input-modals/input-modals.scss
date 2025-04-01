@@ -12,6 +12,8 @@
     background: #fbfbfb;
     box-shadow: 0px 0px rem(20px) 0px rgba(0, 0, 0, 0.08) inset;
 
+    color: #242424;
+
     width: 100%;
 
     transition: $transition;
@@ -22,8 +24,39 @@
       }
     }
 
+    & ~ .ui-input__error {
+      display: none;
+    }
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    &[type='number'] {
+      -moz-appearance: textfield;
+    }
+
+    &[type='tel']:hover {
+      &::placeholder {
+        color: #7f7f7f;
+      }
+    }
+
     &::placeholder {
       text-transform: uppercase;
+
+      background: linear-gradient(
+        90deg,
+        rgba(127, 127, 127, 1) 85%,
+        rgba(36, 36, 36, 1) 85%,
+        rgba(36, 36, 36, 1) 100%
+      );
+      color: transparent;
+      background-clip: text;
+
+      width: fit-content;
     }
 
     & ~ label {
@@ -93,7 +126,7 @@
   }
 
   &__explain {
-    margin-top: rem(12px);
+    margin-top: rem(20px);
 
     color: $text;
     text-align: center;
@@ -106,7 +139,6 @@
 
     @media #{media('<',d)} {
       margin-top: rem(8px);
-      margin-bottom: rem(20px);
 
       font-family: 'Foundry Monoline OT3';
       font-size: rem(14px);
@@ -114,6 +146,12 @@
       font-weight: 500;
       line-height: 140%; /* 19.6px */
       letter-spacing: rem(-0.14px);
+    }
+  }
+
+  &__explain_under-button {
+    @media #{media('<',d)} {
+      padding-block: rem(7.5px);
     }
   }
 
@@ -343,6 +381,8 @@
     gap: rem(8px);
     align-items: center;
 
+    cursor: pointer;
+
     padding: rem(8px) rem(16px);
 
     color: #242424;
@@ -362,6 +402,16 @@
       font-weight: 500;
       line-height: 140%; /* 14px */
       letter-spacing: rem(-0.1px);
+    }
+
+    @media #{media('>',t)} and (hover: hover) and (pointer: fine) {
+      &:hover {
+        & > div {
+          background-color: #db2e27;
+          color: #fff;
+          border: none;
+        }
+      }
     }
   }
 
@@ -386,5 +436,13 @@
     line-height: 140%; /* 16.8px */
     letter-spacing: rem(-0.12px);
     text-transform: uppercase;
+  }
+
+  &__forgot {
+    font-size: rem(16px);
+
+    @media #{media('<',d)} {
+      font-size: rem(12px);
+    }
   }
 }

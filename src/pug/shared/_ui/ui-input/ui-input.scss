@@ -30,7 +30,7 @@
   input {
     padding: rem(20px);
 
-    color: #7f7f7f;
+    color: #242424;
     font-family: 'Foundry Monoline OT3';
     font-size: rem(16px);
     font-style: normal;
@@ -54,7 +54,6 @@
     }
 
     @media #{media('<',d)} {
-      color: #6f6f6f;
       font-size: rem(12px);
       line-height: 140%; /* 16.8px */
       letter-spacing: rem(-0.12px);
@@ -93,7 +92,6 @@
     font-style: normal;
     font-weight: 300;
     line-height: normal;
-    color: #364a46;
 
     transition: $transition;
 

@@ -34,20 +34,28 @@ mixin input-modals(wrapper, mods)
           #error Неверный телефон или пароль
           button.input-modals__main-button Войти
         .input-modals__wrap-center
-          a.input-modals__inline-link(href='#') Забыли пароль?
+          a.input-modals__inline-link.input-modals__forgot(href='#') Забыли пароль?
         a.input-modals__link(href='#') Заявка на дилерство
         hr
         hr
         hr
         h4 Подтвердите номер телефона
-        p.input-modals__explain Сейчас вы получите код на номер + 7 981 ***-**-22
+        p.input-modals__explain
+          | Сейчас вы получите код на номер
+          br
+          | + 7 981 ***-**-22
         form
-          +ui-input({id: 'code', label: 'Код'})(placeholder='Код *')(type='number', required='')
+          +ui-input({id: 'code', label: 'Код'})(placeholder='Код *')(
+            type='number',
+            min='0',
+            max='999999',
+            required=''
+          )
           button.input-modals__main-button Войти
-        p.input-modals__explain Отправим код повторно через 45 секунд
+        p.input-modals__explain.input-modals__explain_under-button Отправим код повторно через 45 секунд
         .input-modals__wrap-center
           .input-modals__no-code(href='#')
-            span Не приходит код
+            a.span(href='#') Не приходит код
             .input-modals__question ?
         hr
         hr
